@@ -43,7 +43,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 
-@Module.Info(name = "MasterCA", description = "leaked penis hack crystalaura 2", category = Module.Category.COMBAT)
+@Module.Info(name = "CrystalAura", description = "YakGod.CC Original", category = Module.Category.COMBAT)
 public class TestCA extends Module {
 
     private Setting<Integer> tickPlaceDelay;

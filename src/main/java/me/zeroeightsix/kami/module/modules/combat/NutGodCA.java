@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-@Module.Info(name = "SimpleCA", category = Module.Category.COMBAT)
+@Module.Info(name = "NutGodCA", category = Module.Category.COMBAT)
 public class NutGodCA extends Module {
     private Setting<Boolean> place;
     private Setting<Boolean> raytrace;

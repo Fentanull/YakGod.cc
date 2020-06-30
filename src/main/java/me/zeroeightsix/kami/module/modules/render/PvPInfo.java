@@ -1,17 +1,3 @@
-/*
- * Decompiled with CFR <Could not determine version>.
- *
- * Could not load the following classes:
- *  net.minecraft.client.Minecraft
- *  net.minecraft.client.entity.EntityPlayerSP
- *  net.minecraft.client.gui.FontRenderer
- *  net.minecraft.client.multiplayer.ServerData
- *  net.minecraft.entity.player.InventoryPlayer
- *  net.minecraft.init.Items
- *  net.minecraft.item.Item
- *  net.minecraft.item.ItemStack
- *  net.minecraft.util.NonNullList
- */
 package me.zeroeightsix.kami.module.modules.render;
 
 import java.awt.Color;
@@ -46,13 +32,6 @@ public class PvPInfo
         int bgreen = this.green.getValue();
         int cblue = this.blue.getValue();
         int color = drgb = ColourUtils.toRGBA(ared, bgreen, cblue, 255);
-        int totems = PvPInfo.mc.player.inventory.mainInventory.stream().filter(itemStack -> {
-            if (itemStack.getItem() != Items.TOTEM_OF_UNDYING) return false;
-            return true;
-        }).mapToInt(ItemStack::getCount).sum();
-        if (PvPInfo.mc.player.getHeldItemOffhand().getItem() == Items.TOTEM_OF_UNDYING) {
-            ++totems;
-        }
         if (this.rainbow.getValue().booleanValue()) {
             int argb;
             float[] hue = new float[]{(float) (System.currentTimeMillis() % 11520L) / 11520.0f};
@@ -63,27 +42,10 @@ public class PvPInfo
             color = argb = ColourUtils.toRGBA(red, green, blue, 255);
         }
         {
-            this.cFontRenderer.drawStringWithShadow("FPS: " + Minecraft.getDebugFPS(), this.x.getValue().floatValue(), yCount - (float) this.cFontRenderer.getHeight() - 1.0f, color);
-            this.cFontRenderer.drawStringWithShadow("PING: " + (mc.getCurrentServerData() != null ? Long.valueOf(PvPInfo.mc.getCurrentServerData().pingToServer) : "0"), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
-            this.cFontRenderer.drawStringWithShadow("AT: " + this.getAutoTrap(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
-            this.cFontRenderer.drawStringWithShadow("HF: " + this.getHoleFiller(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
-            this.cFontRenderer.drawStringWithShadow("SU: " + this.getSurround(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
             this.cFontRenderer.drawStringWithShadow("CA: " + this.getCaura(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
             this.cFontRenderer.drawStringWithShadow("KA: " + this.getKA(), this.x.getValue().floatValue(), (yCount += 10.0f) - (float) this.cFontRenderer.getHeight() - 1.0f, color);
             return;
         }
-    }
-
-    private String getAutoTrap() {
-        String x = "OFF";
-        if (ModuleManager.getModuleByName("AutoTrap") == null) return x;
-        return Boolean.toString(ModuleManager.getModuleByName("AutoTrap").isEnabled()).toUpperCase();
-    }
-
-    private String getSurround() {
-        String x = "OFF";
-        if (ModuleManager.getModuleByName("Surround") == null) return x;
-        return Boolean.toString(ModuleManager.getModuleByName("Surround").isEnabled()).toUpperCase();
     }
 
     private String getCaura() {
@@ -96,12 +58,6 @@ public class PvPInfo
         String x = "OFF";
         if (ModuleManager.getModuleByName("Aura") == null) return x;
         return Boolean.toString(ModuleManager.getModuleByName("Aura").isEnabled()).toUpperCase();
-    }
-
-    private String getHoleFiller() {
-        String x = "OFF";
-        if (ModuleManager.getModuleByName("HoleFiller") == null) return x;
-        return Boolean.toString(ModuleManager.getModuleByName("HoleFiller").isEnabled()).toUpperCase();
     }
 }
 

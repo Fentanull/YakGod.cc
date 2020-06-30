@@ -21,7 +21,7 @@ import net.minecraft.util.math.Vec3d;
  * @author hub
  * @since 2019-11-29
  */
-@Module.Info(name = "LegCrystals", category = Module.Category.COMBAT)
+@Module.Info(name = "Leg Crystals", category = Module.Category.COMBAT)
 public class LegCrystals extends Module {
 
     private Setting<Double> range = register(Settings.doubleBuilder("Range").withMinimum(1.0).withValue(5.5).withMaximum(10.0).build());

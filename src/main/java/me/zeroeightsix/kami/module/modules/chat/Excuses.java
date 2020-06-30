@@ -8,9 +8,6 @@ import me.zeroeightsix.kami.setting.Setting;
 import me.zeroeightsix.kami.setting.Settings;
 import net.minecraft.client.gui.GuiGameOver;
 
-/**
- * Memeszz
- */
 @Module.Info(name = "Excuses", description = "Cry!", category = Module.Category.CHAT)
 public class Excuses extends Module {
 

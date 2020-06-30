@@ -36,7 +36,7 @@ import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
  *     this is a mess of pasted john code :(. I can't be bothered to piece together my own actual nametag code because I do not like nametags
  * </p>
  */
-@Module.Info(name = "RusherHackNameTags", category = Module.Category.RENDER)
+@Module.Info(name = "Nametags", category = Module.Category.RENDER)
 public class RusherHackNameTags extends Module {
     CFontRenderer cFontRenderer = new CFontRenderer(new Font("Arial", 0, 18), true, false);
     private Setting<Boolean> Armor = this.register(Settings.b("Armor", false));

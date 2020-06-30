@@ -11,7 +11,7 @@ import net.minecraft.network.play.client.CPacketPlayer;
 import static net.minecraft.network.play.client.CPacketEntityAction.Action.START_SPRINTING;
 import static net.minecraft.network.play.client.CPacketEntityAction.Action.STOP_SPRINTING;
 
-@Module.Info(name = "NoHunger", category = Module.Category.PLAYER)
+@Module.Info(name = "AntiHunger", category = Module.Category.PLAYER)
 public class NoHunger extends Module {
 
     @Override
